@@ -33,3 +33,62 @@ root.mainloop()#Runs the application
 
 TKINTER LABEL WIDGET
 The Label widget in python's tkinter library is used to display text or images in a GUI application. It is one of the most basic widgets, often used to provide information or captions
+
+Key Features of Label
+1. It is used to display static text or images
+2. It is used to customize appearance using properties like font, color, size etc.
+3.It can serve as a placeholder or provide feedback in an application.
+
+Label syntax
+Label(parent, text, options). options like font,bg,fg etc.
+
+
+IMAGE DISPLAY IN THE TKINTER
+from PILL import imageTk,image
+NB:Tkinter supports only png and jpg format for image.
+original_image = image.open("mypic.jpg")
+image_resized = original_image.resized((50,50))
+image_rotate = image_resized.rotate(45)
+get_image = imageTK.Photoimage(image_resized)
+my_label = Label(root, image=get_image)
+
+TKINTER FRAME WIZARD
+A frame in tkinter is a container widget used to group and organize other widgets. It acts as a rectangular region on the screen where you can place other widgets such as buttons, labels,and text fields. Frames are espacially useful for creating complex layouts by dividing the window into manageable sections.
+
+KEY FEATURES OF Frames
+1. Container: Frames are primarily used as containers to organize widgets hierarchically.
+2. Styling: You can customize the frame's appearance using properties like background color, border width, and relief styles.
+3. Parenting: A frame can act as a parent to other widgets, allowing you to nest frames for complex layouts.
+
+COMMON ATTRIBUTES
+1. bg: backgground color of the frame
+2. width and height: Set the dimensions of the frame
+3. relief: Specifies the border style (e.g "flat","raised","sunken","groove","ridge")
+4. borderwidth: Sets the width of the border.
+
+fiil="y" fill frame to y-direction
+side=LEFT put the frame to left side.
+
+
+BUTTON WIDGET
+In tkinter, a Button widget is used to create a button that users can click to trigger a specific action or event in a GUI application. The Button widget comes with several configurable options, allowing you to customize its appearance and behavior.
+
+BUTTON WIDGET EXPLANATION
+1. Text: The label displayed on the button.
+2. Command: A function or method to be executed when the button is clicked.
+3. width/height:Size of the button in terms of characters.
+4. fg/bg: Foreground and background colors of the button.
+5. font: The font style of the button text.
+6. State: The state of the button, e.g NORMAL(default), DISABLED.
+
+RAISED: It can be used as tk.RAISED OR relief="raised"
+fill: It can be used as tk.BOTH for x and y or fill="y", fill="x"
+
+
+TKINTER ENTRY WIDGET(ENTRY WIZARD)
+The Entry widget in Tkinter is used to accept single-line text input from the user. It is commonly used for entring names, passwords, email, numbers, etc.
+
+Syntax:
+entry = Entry(master,options)
+1. master: The parent container like root or a frame.
+2. options: Configuration parameters to customize the widget such as font,bg,fg etc.

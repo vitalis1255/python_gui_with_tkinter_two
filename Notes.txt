@@ -93,3 +93,11 @@ entry = Entry(master,options)
 1. master: The parent container like root or a frame.
 2. options: Configuration parameters to customize the widget such as font,bg,fg etc.
 show="*" when this is used while typing a string, star will be showing instead of the string.
+name_var = StringVar() stores string. In Entry,use textvariable=name_var
+
+
+TEXT WIDGET (MULTI-LINE INPUT/DISPLAY)
+The 'Text' widget in Tkinter allows users to enter or display multiple lines of text. It is like a notepad-style field and supports advanced formatting, tags, and scrolling.
+Syntax:
+text_widget = Text(master, options)
+label = Label(root, text=text.get("1.0",END)) 1 stands for line 1 while 0 stands for zero character.

@@ -101,3 +101,42 @@ The 'Text' widget in Tkinter allows users to enter or display multiple lines of 
 Syntax:
 text_widget = Text(master, options)
 label = Label(root, text=text.get("1.0",END)) 1 stands for line 1 while 0 stands for zero character.
+
+
+MESSAGE WIDGET IN TKINTER
+The Message widget is similar to the label, but designed specifically for longer blocks of text. Unlike Label, it wraps text automatically, making it ideal for displaying multi-line static text like instructions or warnings.
+Syntax:
+msg=Message(master, text="Your long message here",options)
+Practically: Two widgets used to display text are:
+1. Label
+2. Message
+relief is used for formatting text.
+
+
+LAYOUT MANAGEMENT IN TKINTER
+Tkinter offers three main layout managers:
+1. pack()
+2. grid()
+3. place()
+You can also nest layouts using Frames inside Frames.
+
+PACK()
+The pack() geometry manager is one of the simplest ways to position widgets in a window. It automatically arranges widgets relative to each other in one of four directions: top, bottom, left, or right.
+Basic Syntax:
+widget.pack(options) options such as side(top,bottom,left,right),fill(expand widget to fill x,y,or BOTH),expand allow the widget to expand to fill any extra space in the geometry master, padx(Add horizontal padding),pady(Add vertical padding).
+
+
+WHAT IS GRID LAYOUT IN TKINTER?
+The grid() layout geometry manager arranges widgets in a tabular (grid-like) structure using rows and columns. It gives you fine control over where each widget appears.
+Baisc Syntax:
+widget.grid(row=0,column=0,options). options such as rowspan(It indicates how many rows the widget should span),columnspan(It indicates how many columns the widget should span),sticky(Aligns the widget N,S,E,W or combination of nsew),padx,pady,ipadx/ipady(Internal padding(space inside the widget)).
+
+KEY ADVANTAGES OF grid()
+1. It is better for form-style layouts (login forms,calculators, etc).
+2. You can align widgets precisely using rows and columns.
+3. Sticky helps to align widget inside its cell(e.g sticky=W aligns left).
+
+IMPORTANT RULE ABOUT GRID()
+Do not pack() and grid() in the same container (i.e, same frame or root window).
+padx gives external space along x-axis while pady gives external space along y-axis.
+row is vertically while column is horizontally.

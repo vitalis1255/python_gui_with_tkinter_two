@@ -8,7 +8,7 @@ scroll = Scrollbar(root)
 scroll.pack(side=RIGHT,fill=Y)
 
 def fetch():
-  content = text.get("1.0",END)
+  content = text.get("1.0",END)#1.0 line 1 and 0 for texts to get
   label = Label(root, text="User Input: " + content)
   label.pack(pady=10)
 

@@ -92,3 +92,4 @@ Syntax:
 entry = Entry(master,options)
 1. master: The parent container like root or a frame.
 2. options: Configuration parameters to customize the widget such as font,bg,fg etc.
+show="*" when this is used while typing a string, star will be showing instead of the string.

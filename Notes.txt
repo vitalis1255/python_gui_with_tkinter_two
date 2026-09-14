@@ -140,3 +140,21 @@ IMPORTANT RULE ABOUT GRID()
 Do not pack() and grid() in the same container (i.e, same frame or root window).
 padx gives external space along x-axis while pady gives external space along y-axis.
 row is vertically while column is horizontally.
+
+
+WHAT IS STICKY IN GRID()
+In Tkinter's grid() layout, each cell is like a box, and by default, a widget sits in the center of that box. The sticky option is used to stick the widget to a specific side (or sides) of the cell:
+1. N = Top (North)
+2. S = Bottom (South)
+3. E = Right (East)
+4. W = Left (West)
+
+You can combine directions:
+1. sticky = "WE" Stretch horizontally
+2. sticky = "NS" Stretch vertically
+3. sticky = "NSEW" fill entire cell
+padx and pady are like margins.
+
+
+
+WHAT IS place() in TKINTER?

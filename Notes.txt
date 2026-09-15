@@ -158,3 +158,110 @@ padx and pady are like margins.
 
 
 WHAT IS place() in TKINTER?
+The place() geometry manager is used to position widgets explicitly at specific coordinates or relative positions inside their parent widget (like root or Frame). Unlike pack() and grid(), which manage layout automatically, place() is manual positioning.
+
+Basic Syntax:
+widget.place(x=50,y=100).
+
+You can also use relative positioning:
+  widget.place(relx=0.5,rely=0.5,anchor='center'). It has options such as x(Absolute horizontal position(pixels from the left)),y(Absolute vertical position (pixels from the top)), relx(Relative horizontal position (0.0 to 1.0 of the parent width)), rely(Relative vertical position (0.0 to 1.0 of the parent height)), width(Absolute width of the widget), height(Absolute height of the widget), anchor(Controls where the widget is anchored (e.g 'center','n','ne')).
+
+When to use place()
+1. When you need pixel-perfect layouts.
+2. When designing custom interfaces or games.
+3. Avoid using it for responsive forms or dynamic resizing-it doesn't adapt automatically.
+
+SUMMARY:
+1. place() lets you manually position widgets.
+2. Supports both absolute(x,y) and relative (relx.rely) positioning.
+3. Use anchor to control how the widget aligns its point.
+4. Gives full control, but requires more effort for responsive design.
+
+
+
+WHAT ARE NESTED LAYOUTS?
+In Tkinter, you can nest Frames inside each other, and assign different layout managers (pack(), grid(), and place()) to each one. This approach is useful when you want to:
+1. Organize the UI into sections.
+2. Apply different layouts to each section.
+3. Create complex, clean, and manageable interfaces.
+
+BENEFITS OF NESTED LAYOUTS
+1. Modular UI - Each section is clean and separated.
+2. Flexible design - Mix pack,grid,place as needed (in separate frames).
+3. Maintainability - Easier to read and update complex interfaces.
+
+IMPORTANT RULE:
+Never mix pack() and grid() in the same container (e.g same frame). But you can use pack() in one Frame and grid() in another.
+
+
+TKINTER WIDGETS - PART2(ADVANCED)
+We will learn the following:
+1. Checkbutton
+2. Radiobutton
+3. Listbox
+4. Combobox(via ttk)
+5. Spinbox
+6. Scale
+7. Progressbar(via ttk)
+8. Menu and Submenus
+9. Separator, PanedWidth, Notebook(Tabs)
+
+
+TKINTER CHECKBUTTON WIDGET
+The Checkbutton in Tkinter lets the user toggle an option ON or OFF - similar to a checkbox in web forms.
+
+KEY FEATURES OF CHECKBUTTON:
+1. It can be checked (value = 1) or unchecked (value = 0).
+2. It is used for multiple independent options.
+3. It can be linked to a variable(IntVar,StringVar, or BooleanVar) to track its state.
+
+CHECKBUTTON IMPORTANT parameters
+text(The label shown next to the checkbutton),variable(variable(IntVar, StringVar) storing checkbutton state),onvalue(Value when checked (default is 1)), offvalue(Value when unchecked(default is 0)), Command(Function to call when state changes), state(Use "disabled" to disable interaction).
+
+WHERE CHECKBUTTON IS USED:
+1. Agreeing to terms and conditions.
+2. Selecting features or references.
+3. Setting toggles (e.g notifications, dark mode)
+4. Multiple choice questions ( with multiple correct answers).
+
+
+TKINTER RADIOBUTTON WIDGET
+The Radiobutton in Tkinter allows the user to select one option from a group - just like radio buttons in HTML forms.
+
+KEY FEATURES OF RADIOBUTTON
+1. Used when you want the user to choose only one option from multiple choices.
+2. All related Radiobuttons share the same variable (usually StringVar or IntVar).
+3. Each button has a unique value that gets stored in that variable when selected.
+
+IMPORTANT PARAMETERS OF RADIOBUTTON
+text(Label for the radio button), variable(Shared variable to track selected value),value(Unique value assigned to that option),command(Function to run when selection changes),state("disabled") or "normal" to disable/enable option, indicator on(Set to 0 for button-like radio look (advanced UI)).
+
+USAGE OF RADIOBUTTON
+1. Gender, age group, or user role selection.
+2. Quiz with single correct answer.
+3. Theme selector (Light/Dark/System).
+4. Language selection.
+
+
+TKINTER LISTBOX WIDGET
+The Listbox widget in Tkinter is used to display a list of items, allowing the user to select one or more.
+
+KEY FEATURES OF LISTBOX
+1. You can allow single or multiple selections.
+2. Items can be added,removed, or modified.
+3. Useful for displaying options, menus, files, etc.
+
+LISTBOX PARAMETERS
+height(Number of visible rows),selectmode(SINGLE,BROWSE,MULTIPLE, OR EXTENDED),bg/fg(Background and text color),exportselection(if False,selection persists when focus changes).
+
+LISTBOX SELECTMODE options
+SINGLE(User can select only one item by clicking),BROWSE(Like SINGLE, but allows clikc-drag to browse selections), MULTIPLE(User can select multiple items, clicking each one separately),EXTENDED(User can select ranges using shift (range) and Ctrl(mult)).
+
+COMMON USE CASES OF LISTBOX
+1. Select multiple files
+2. Choose items from a long list
+3. Forms with multi-option inputs
+4. Dynamic content selectors (e.g countries, hobbies)
+
+
+COMBOBOX (via ttk) in TKINTER

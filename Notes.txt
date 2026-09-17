@@ -265,3 +265,95 @@ COMMON USE CASES OF LISTBOX
 
 
 COMBOBOX (via ttk) in TKINTER
+The ttk.Combobox is a drop-down list widget from the ttk(Themed Tkinter) module. It allows users to choose a single item from a predefined list of options, just like HTML's <select> tag.
+
+KEY FEATURES OF ttk.Combobox
+1. Drop-down with auto-complete(optional).
+2. Can be editable or read-only.
+3. Comes from the ttk module, so it has a modern look.
+NB:To avoid displaying items one after the other,use label.config(text=f"You selected: {Selected}") as example.
+
+COMMON COMBOBOX OPTIONS:
+values(List of items shown in the dropdown),state(Set to randomly to prevent typing), get(Returns the currently selected value), current(n):Set the index of the selected value,set(val):Sets the displayed value programmatically.
+NB: This state='readonly' prevents typing in the combobox.
+
+USE CASES OF COMBOBOX
+1. Country or language selection.
+2. Theme or mode switching.
+3. Dropdown filter options.
+
+
+TKINTER SPINBOX - WIDGET
+The Spinbox widget in Tkinter lets users choose from a range of values using small up/down arrow buttons. It is often used when input is numeric or limited to specific options.
+
+KEY FEATURES OF SPINBOX
+1. Allows incremental input using arrows.
+2. Accepts only values withing a defined range or a fixed set of choices.
+3. Prevents invalid entries (when properly validated).
+
+USEFUL OPTIONS FOR SPINBOX
+from_:Minimum value (if using numeric range),to:Maximum value, values:Tuple or list of custom values, increment:Step size between values (e.g 0.5), command: Function to call when value is changed, width: Width of the input field, state: "normal" or "readonly", wrap:If true, wraps around when limits hit.
+
+USE CASES OF SPINBOX
+1. Selecting quantity or count.
+2. Choosing time, date, or rating.
+3. Replacing text entry with controlled input.
+
+
+TKINTER SCALE WIDGET - FULL EXPLANATION
+The Scale widget in Tkinter provides a slider control for selecting a numerical value in a range. It is great for inputting numbers with visual feedback - like volume,brightness, or speed settings.
+
+KEY FEATURES OF SCALE
+1. Selects a continous or stepped value.
+2. Can be horizontal or vertical.
+3. Shows a handle that users can drag.
+4. Supports callback functions when the value changes.
+
+PARAMETERS TO BE USED WITH SCALE
+from_:Minimum value of the scale (e.g 0), to: Maximum value (e.g 100), orient: HORIZONTAL or VERTICAL orientation, command: Function called when slider is moved, resolution: Step size (e.g 0.5 for decimal steps), length: Length of the slider in pixels, tickinterval:Marks intervals on the scale, label:Label text to show above the scale.
+NB: WHEN DEALING WITH SCALE:
+def show_scale(val):
+   label.config(text=f"selected: {val})
+
+Scale(root, text="selected: 0", command=show_scale)
+Label(root, text="selected: 0").pack()
+
+USE CASES FOR SCALE
+1. Audio volume control.
+2. Image zoom level.
+3. Brightness/contrast adjustment.
+4. Game speed or difficulty.
+
+
+PROGRESSBAR IN TKINTER (via ttk)
+The Progressbar widget from tkinter.ttk provides a visual representation of the progress of a long-running task. It can operate in two modes:
+MODES OF PROGRESSBAR:
+1. determinate: shows actual progress (0% to 100%).
+2. indeterminate: shows motion without indicating how much is done (used when you do not know the duration).
+
+COMMON OPTIONS FOR PROGRESSBAR
+orient: HORIZONTAL or VERTICAL, length: Length of the bar in pixels, mode: determinate or indeterminate, maximum:Maximum value for the bar, value: Current progress (0 to maximum).
+
+USE CASES FOR PROGRESSBAR
+1. File download.
+2. Task completion.
+3. Loading screens.
+4. Installers or batch operations.
+
+
+MENUS AND SUBMENUS IN TKINTER
+WHAT IS A MENU: A Menu in Tkinter is a drop down list of options located usually at the top of the window (like File, Edit, Help in most applications). SUBMENUS are nested menus that appear when you hover over a menu option.
+
+HOW TO CREATE A MENU
+1. Create a menu object.
+2. Assign it to the main window using window.config(menu=menubar)
+3. Add top-level menus(e.g File, Edit,Help,View, etc; These appear at the menu bar) using add_cascade.
+4. Add commands or submenus using add_command, add_separator,etc.
+
+MENU: KEY METHODS AND THEIR ROLES
+1. Menu():Creates a new menu.
+2. add_command(label,command): Adds an actionable item.
+3. add_cascade(label,menu):Adds a submenu.
+4. add_separator():Adds a horizontal line.
+5. tearoff=0: Removes the dashed line at the top of the menu(optional).
+6. root.config(menu=menubar):Links the menu bar to the main window.

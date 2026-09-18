@@ -436,4 +436,19 @@ Common focus methods:
 3. .focus_force()
 : Forces focus (even if the window is inactive). Focus is for Entry field but setting focus first is at button with the help of command =lambda: field_name.focus_set()
 
-2. Grab: 
+2. Grab: Grab captures all events for a specific widget - useful for modal dialogs where you want to block interaction with other windows/widgets.
+
+Grap methods:
+1. grab_set(): Widget captures all events until released.
+2. grab_release(): Release the grab.
+3. grab_current(): Returns the widget that has grab.
+
+3. Widget State: Some widgets (Button, Entry, etc) have a state option that controls if they can be used.
+Common states:
+1. NORMAL: Fully functional.
+2. DISABLED: Greyed out, cannot be clicked or typed in.
+3. ACTIVE: Mouse is hovering (usually for styling).
+
+Here's a small Tkinter app that uses bind()
+1. Mouse drag: Draws lines on the canvas.
+2. keyboard press: Changes the pen color.

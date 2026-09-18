@@ -428,9 +428,12 @@ COMMON KEYBOARD EVENT STRINGS
 
 
 Focus, Grap, and Widget State
-FOCUS: Focus determines which widget receives keyboard events. Only one widget can have focus at a time.
+1. FOCUS: Focus determines which widget receives keyboard events. Only one widget can have focus at a time.
 
 Common focus methods:
 1. .focus_set(): Gives keyboard focus to this widget.
 2. .focus_get(): Returns the widget that currently has focus.
-3. .focus_force(): Forces focus (even if the window is inactive).
+3. .focus_force()
+: Forces focus (even if the window is inactive). Focus is for Entry field but setting focus first is at button with the help of command =lambda: field_name.focus_set()
+
+2. Grab: 

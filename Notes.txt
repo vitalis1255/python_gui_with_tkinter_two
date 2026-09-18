@@ -352,8 +352,85 @@ HOW TO CREATE A MENU
 
 MENU: KEY METHODS AND THEIR ROLES
 1. Menu():Creates a new menu.
-2. add_command(label,command): Adds an actionable item.
+2. add_command(label,command): Adds an actionable item. It is used to add submenus
 3. add_cascade(label,menu):Adds a submenu.
 4. add_separator():Adds a horizontal line.
 5. tearoff=0: Removes the dashed line at the top of the menu(optional).
 6. root.config(menu=menubar):Links the menu bar to the main window.
+
+
+SEPARATOR, PANEDWINDOW, Notebook
+1. ttk.Separator:
+Purpose: A thin line used to visually separate different sections of your GUI (horizontal or vertical).
+Syntax:
+ttk.Separator(parent,orient='horizontal' or 'vertical')
+
+2. PanedWindow:
+Purpose: A container that divides the window into movable resizable panes. You can add multiple widgets inside it.
+Syntax:
+PanedWindow(parent,orient=HORIZONTAL or VERTICAL)
+pw.pack(fill=BOTH,expand=1)#expand=1 tells the master widget to allocate any extra sreen space to that specific widget if the window is resized larger.
+
+3. ttk.Notebook
+Purpose: ttk.Notebook is used to create tabbed interfaces, similar to browser tabs or settings dialogs.
+Syntax:
+notebook = ttk.Notebook(parent)
+notebook.add(child_frame,text="Tab Name")
+
+
+TKINTER EVENT HANDLING
+1. Command Binding(Simpler Method) in Tkinter: Command binding is the most basic and beginner-friendly way to handle events in Tkinter. It's typical used with widgets like Button, Checkbutton, Radiobutton, and Menu.
+
+Concept:
+You assign a function (also called a "callback") to a widget using the command parameter. When the user interacts with that widget(e.g clicks a button), the function is executed.
+
+Syntax:
+widget = Widget(root,...,command=function_name)
+1. function_name is passed without parentheses, so it's not executed immediately.
+2. The function cannot take arguments unless wrapped (e.g with lambda).
+
+
+LIMITATIONS OF COMMAND:
+1. No event info: You do not get details like which key or mouse button was used.
+2. No advanced control: You can't detect mouse position or keyboard input - for that, use bind() instead.
+
+USE CASES:
+1. Buttons: Submit,Save,Cancel, etc.
+2. Menus: File >> Exit.
+3. Simple click actions that don't need event data.
+
+
+USING THE bind() METHOD(ADVANCED METHOD)
+The bind() method lets you attach an event handler to a widget so it can react to mouse events, keyborad events, or other special triggers.
+Syntax:
+widget.bind("<event>",handler_function)
+1. <event>: Event description in angle brackets ("<Button-1>","<key>", etc)
+2. handler_function: Function that is called when the event happens.
+3. Must accept one parameter: The event object.
+
+COMMON EVENT STRINGS
+<Buuton-1>: Left mouse click.
+<Button-2>: Middle click.
+<Button-3>: Right click.
+<Double-Button-1>: Double left click.
+<B1-Motion>: Mouse drag with left button.
+<Enter>: Cursor enters widget.
+<Leave>: Cursor leaves widget.
+
+COMMON KEYBOARD EVENT STRINGS
+<Key>:Any key.
+<Return>: Enter key.
+<Escape>: Escape key.
+<Up>:Up arrow key.
+<Down>: Down arrow key.
+<Control-a>:Ctrl+A
+#lambda e holds the program from executing immediately you run the program.
+
+
+Focus, Grap, and Widget State
+FOCUS: Focus determines which widget receives keyboard events. Only one widget can have focus at a time.
+
+Common focus methods:
+1. .focus_set(): Gives keyboard focus to this widget.
+2. .focus_get(): Returns the widget that currently has focus.
+3. .focus_force(): Forces focus (even if the window is inactive).

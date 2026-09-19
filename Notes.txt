@@ -452,3 +452,10 @@ Common states:
 Here's a small Tkinter app that uses bind()
 1. Mouse drag: Draws lines on the canvas.
 2. keyboard press: Changes the pen color.
+
+TKINTER VARIABLES AND DATA Binding
+Tkinter provides special variable classes (StringVar, IntVar, DoubleVar, BooleanVar) that act as wrappers around normal Python values. These allow two-way data binding between your Python code and widgets - meaning:
+1. When the variable changes, the widget updates automatically.
+2. When the widget value changes, the variable updates automatically.
+
+Varaiable Classes are: StringVar() stores Text/strings e.g 'Hello',IntVar() stores integers e.g 42, DoubleVar() stores floating numbers e.g 3.14, BooleanVar() stores True/False e.g TRUE

@@ -459,3 +459,31 @@ Tkinter provides special variable classes (StringVar, IntVar, DoubleVar, Boolean
 2. When the widget value changes, the variable updates automatically.
 
 Varaiable Classes are: StringVar() stores Text/strings e.g 'Hello',IntVar() stores integers e.g 42, DoubleVar() stores floating numbers e.g 3.14, BooleanVar() stores True/False e.g TRUE
+
+WORKING WITH DIALOG BOXES IN TKINTER
+Tkinter comes with three different types of Dialog boxes:
+1. messagebox(info,warning,error,etc)
+2. filedialog(open/save files)
+3. colorchooser.
+
+Message Boxes(MESSAGEBOX)
+Tkinter's messagebox module is used to display pop-up dialogs with messages and optional buttons.
+
+Common Functions of messagebox:
+1. showinfo(title,message):Information pop-up.
+2. showwarning(title,message): Warning pop-up.
+3. showerror(title,message): Error pop-up.
+4. askquestion(title,message): Returns "yes" or "no".
+5. askokcancel(title,message): Returns True or False.
+6. askyesno(title,message):Returns True or False.
+7. askretry(title,message): Returns True or False.
+
+
+File Dialogs (filedialog):
+Tkinter's filedialog lets the user select files or folders.
+
+Common Functions of Filedialogs:
+1. askopenfilename():Select a file to open.
+2. askopenfilenames(): Select multiple files.
+3. asksaveasfilename(): Select location to save a file.
+4. askdirectory(): Select a folder.

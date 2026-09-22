@@ -487,3 +487,9 @@ Common Functions of Filedialogs:
 2. askopenfilenames(): Select multiple files.
 3. asksaveasfilename(): Select location to save a file.
 4. askdirectory(): Select a folder.
+ 
+Common filedialog Functions:
+1. askopenfilename(): open a single file and returns file path.
+2. askopenfilenames(): Open multiple files and returns tuple of file paths.
+3. asksaveasfilename(): select a location to save a file and returns file path.
+4. askdirectory(): select a folder and returns folder path.

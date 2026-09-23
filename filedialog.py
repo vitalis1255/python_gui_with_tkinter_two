@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import filedialog
 
+#Display a single file path
 #single file
 def Open_File():
   #Open a single file to get the file path
@@ -14,6 +15,7 @@ def Open_File():
   with open(file_path,'r', encoding='utf-8') as file:
     tk.Label(root, text=file.read()).pack()#still checking
 
+#Display the path of multiple files
 #multiple files
 def open_multiple_file():
   files = filedialog.askopenfilenames(
@@ -24,8 +26,23 @@ def open_multiple_file():
     tk.Label(root,text=files).pack(pady=5)
 
 #save file function
+#Display save file path
 def save_file():
-  pass
+  save_path = filedialog.asksaveasfilename(
+    title="Save as",
+    defaultextension=".txt",#default for saving the file
+    filetypes=[("Text Files","*.txt"),("All Files","*.*")]
+  )
+  if save_path:
+    tk.Label(root,text="File saved at:" + " " + save_path).pack(pady=5)
+
+#Display folder path
+def select_folder():
+  folder = filedialog.askdirectory(
+    title="Select a Folder",
+  )
+  if folder:
+    tk.Label(root,text=folder).pack(pady=5)
 
 #exit tkinter
 def exit_app():
@@ -46,4 +63,8 @@ tk.Button(root,text="Exit",command=exit_app).pack(pady=5)
 
 #save file button
 tk.Button(root,text="Save File",command=save_file).pack(pady=5)
+
+#file directory button
+tk.Button(root,text="Select Folder",command=select_folder).pack(pady=5)
+
 root.mainloop() 

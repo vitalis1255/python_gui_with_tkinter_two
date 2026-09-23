@@ -493,3 +493,25 @@ Common filedialog Functions:
 2. askopenfilenames(): Open multiple files and returns tuple of file paths.
 3. asksaveasfilename(): select a location to save a file and returns file path.
 4. askdirectory(): select a folder and returns folder path.
+
+defaultextension comes only during asksaveasfilename, but in askdirectory, you pass only title.
+
+WORKING WITH THE LAST DIALOG BOXES REMAINING IN TKINTER:
+colorchooser: It is used to pick a color with the help of askcolor(title="pick a color")
+
+CREATING A TOOLBAR WITH ICONS
+A toolbar is just a Frame placed at the top of the window that holds Button widgets with icons.
+
+
+ADDING IMAGES IN TKINTER
+Using Photoimage(supports GIF & PNG): The Photoimage class in Tkinter allows you to display images, but it only supports PNG and GIF formats (no JPG)
+
+USING PIL(PILLOW) FOR JPG,PNG,etc
+Tkinter's Photoimage only supports PNG and GIF, but with PIL(Pillow library) you can load almost all formats like JPG,JPEG,BMP,PNG,TIFF,WEBP, etc
+
+Resize,Crop,Rotate, and Filter Images(Pillow + Tkinter)
+Key Takeaways:
+1. Resize: use image.resize((w,h))
+2. Crop: use image.crop((left,top,right,bottom))
+3. Rotate: use image.rotate(angle)
+4. Filter: use ImageOps.grayscale(image),image.filter(ImageFilter.BLUR)
